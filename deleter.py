@@ -3,6 +3,7 @@ import os
 # List of files and folders to exclude from deletion
 excluded_items = ['FlaskStarter.py']
 
+
 def delete_folder_contents(path):
     for root, dirs, files in os.walk(path, topdown=False):
         for file in files:
@@ -13,6 +14,7 @@ def delete_folder_contents(path):
             item_path = os.path.join(root, dir)
             if os.path.basename(item_path) not in excluded_items:
                 os.rmdir(item_path)
+
 
 # Folders and files to delete
 items_to_delete = [
@@ -31,4 +33,4 @@ for item in items_to_delete:
     elif os.path.isfile(item):
         os.remove(item)
 
-print("🗑️ Folders and files have been deleted (except for FlaskStarter.py).")
+print("🗑️  Folders and files have been deleted (except for FlaskStarter.py).")

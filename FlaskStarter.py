@@ -1,8 +1,17 @@
 import os
 import subprocess
+import threading
 
-# Create a virtual environment
-subprocess.run(["python", "-m", "venv", ".venv"], check=True)
+
+# Function to create virtual environment
+def create_venv():
+    subprocess.run(["python", "-m", "venv", ".venv"], check=True)
+
+
+# Create a thread for creating the virtual environment
+venv_thread = threading.Thread(target=create_venv)
+venv_thread.start()
+
 
 # Create app.py (overwrite if exists)
 app_code = '''from flask import Flask, render_template, request, jsonify
