@@ -51,7 +51,7 @@ index_html_code = """<!DOCTYPE html>
   </head>
 
   <body>
-    <h1>Hello, World!</h1>
+    <h1 class="title">Hello, World!</h1>
 
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
@@ -63,7 +63,12 @@ with open("templates/index.html", "w") as index_html:
     index_html.write(index_html_code)
 
 # Inside static folder, create css/index.css and js/index.js (overwrite if exists)
-css_code = '/* Add your CSS styles here */\n'
+css_code = """/* Add your CSS styles here */
+.title {
+  color: blue;
+  font-size: 3rem;
+}
+\n"""
 js_code = '// Add your JavaScript code here\n'
 with open("static/css/index.css", "w") as css_file:
     css_file.write(css_code)

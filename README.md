@@ -43,11 +43,7 @@ FlaskStarter is a project automation script designed to kickstart your Flask web
 
 4. Follow the setup instructions provided by FlaskStarter.
 
-5. To clean up the project files, run deleter.py:
-
-   ```bash
-    python deleter.py
-   ```
+5. After clicking on the `http://127.0.0.1:5000`, you should see a Hello, World message in blue color
 
 ## Project Files
 
