@@ -4,11 +4,8 @@ import subprocess
 # Create a virtual environment
 subprocess.run(["python", "-m", "venv", ".venv"], check=True)
 
-# Install Flask
-subprocess.run(["pip", "install", "Flask"], check=True)
-
 # Create app.py (overwrite if exists)
-app_code = '''from flask import Flask, render_template, request
+app_code = '''from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -19,7 +16,6 @@ def index():
 if __name__ == "__main__":
     app.run(debug=True)
 '''
-
 with open("app.py", "w") as app_file:
     app_file.write(app_code)
 
@@ -28,6 +24,7 @@ os.makedirs("templates", exist_ok=True)
 os.makedirs("static/css", exist_ok=True)
 os.makedirs("static/js", exist_ok=True)
 os.makedirs("static/images", exist_ok=True)
+os.makedirs("static/favicon", exist_ok=True)
 
 # Inside templates folder, create index.html (overwrite if exists)
 index_html_code = """<!DOCTYPE html>
@@ -53,31 +50,21 @@ index_html_code = """<!DOCTYPE html>
 </html>
 
 """
-
 with open("templates/index.html", "w") as index_html:
     index_html.write(index_html_code)
 
 # Inside static folder, create css/index.css and js/index.js (overwrite if exists)
-css_code = '/* Add your CSS styles here */'
-js_code = '// Add your JavaScript code here'
-
+css_code = '/* Add your CSS styles here */\n'
+js_code = '// Add your JavaScript code here\n'
 with open("static/css/index.css", "w") as css_file:
     css_file.write(css_code)
-
 with open("static/js/index.js", "w") as js_file:
     js_file.write(js_code)
 
 # Create .gitignore (overwrite if exists)
-gitignore_content = '.venv/\n__pycache__/\n.vscode/\n'
-
+gitignore_content = '.venv/\n__pycache__/\n.vscode/\n.env\n'
 with open(".gitignore", "w") as gitignore_file:
     gitignore_file.write(gitignore_content)
-
-# Create README.md (overwrite if exists)
-readme_content = '# Flask Project\n\nThis is a simple Flask project.'
-
-with open("README.md", "w") as readme_file:
-    readme_file.write(readme_content)
 
 print("Flask project setup complete.")
 print("Run the following commands to get started:")
