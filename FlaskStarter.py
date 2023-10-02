@@ -76,7 +76,7 @@ with open(".gitignore", "w") as gitignore_file:
     gitignore_file.write(gitignore_content)
 
 print("Flask project setup complete.")
-
+print("Installing dependencies...")
 
 # Wait for virtual environment to be created
 venv_thread.join()
@@ -85,18 +85,15 @@ venv_thread.join()
 subprocess.run(["after.bat"], shell=True, check=True)
 
 
-print("Run the following commands to get started:")
+print("Run the following commands to complete the setup:")
 
 print("\n1️⃣  Activate the virtual environment:")
 print("For Windows:")
-print(".\.venv\Scripts\activate")
+print(".\.venv\Scripts\\activate")
 print("For Mac/Linux:")
 print("source .venv/bin/activate")
 
-print("\n2️⃣  Install Flask:")
-print("pip install Flask")
-
-print("\n3️⃣  Run the app:")
+print("\n2️⃣  Run the app:")
 print("python app.py")
 
 print("\nHappy coding 😊 !")
