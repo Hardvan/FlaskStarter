@@ -76,6 +76,15 @@ with open(".gitignore", "w") as gitignore_file:
     gitignore_file.write(gitignore_content)
 
 print("Flask project setup complete.")
+
+
+# Wait for virtual environment to be created
+venv_thread.join()
+
+# Execute the batch file
+subprocess.run(["after.bat"], shell=True, check=True)
+
+
 print("Run the following commands to get started:")
 
 print("\n1️⃣  Activate the virtual environment:")
