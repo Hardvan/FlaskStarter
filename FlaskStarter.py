@@ -11,6 +11,7 @@ def create_venv():
 # Create a thread for creating the virtual environment
 venv_thread = threading.Thread(target=create_venv)
 venv_thread.start()
+print("🧵 Starting virtual environment creation via thread...")
 
 
 # Create app.py (overwrite if exists)
@@ -27,6 +28,7 @@ if __name__ == "__main__":
 '''
 with open("app.py", "w") as app_file:
     app_file.write(app_code)
+print("✅ Created app.py")
 
 # Set up templates and static folders (overwrite if exists)
 os.makedirs("templates", exist_ok=True)
@@ -34,6 +36,7 @@ os.makedirs("static/css", exist_ok=True)
 os.makedirs("static/js", exist_ok=True)
 os.makedirs("static/images", exist_ok=True)
 os.makedirs("static/favicon", exist_ok=True)
+print("✅ Created templates and static folders")
 
 # Inside templates folder, create index.html (overwrite if exists)
 index_html_code = """<!DOCTYPE html>
@@ -61,6 +64,7 @@ index_html_code = """<!DOCTYPE html>
 """
 with open("templates/index.html", "w") as index_html:
     index_html.write(index_html_code)
+print("✅ Created index.html")
 
 # Inside static folder, create css/index.css and js/index.js (overwrite if exists)
 css_code = """/* Add your CSS styles here */
@@ -69,25 +73,31 @@ css_code = """/* Add your CSS styles here */
   font-size: 3rem;
 }
 \n"""
-js_code = '// Add your JavaScript code here\n'
 with open("static/css/index.css", "w") as css_file:
     css_file.write(css_code)
+print("✅ Created index.css")
+
+js_code = '// Add your JavaScript code here\n'
 with open("static/js/index.js", "w") as js_file:
     js_file.write(js_code)
+print("✅ Created index.js")
 
 # Create .gitignore (overwrite if exists)
 gitignore_content = '.venv/\n__pycache__/\n.vscode/\n.env\n'
 with open(".gitignore", "w") as gitignore_file:
     gitignore_file.write(gitignore_content)
+print("✅ Created .gitignore")
 
-print("Flask project setup complete.")
-print("Installing dependencies...")
+print("🎉 Flask project setup complete.")
+print("📦 Installing dependencies...")
 
 # Wait for virtual environment to be created
 venv_thread.join()
+print("✅ Virtual environment created")
 
 # Execute the batch file
 subprocess.run(["after.bat"], shell=True, check=True)
+print("✅ Installed dependencies")
 
 
 print("Run the following commands to complete the setup:")
