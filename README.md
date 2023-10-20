@@ -2,6 +2,10 @@
 
 FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment, basic Flask app, templates, and static files.
 
+## Demonstration Video
+
+[![FlaskStarter Demonstration](./video/thumbnail2.png)](https://youtu.be/5-Lp_lMpJmo)
+
 ## Features
 
 - **Virtual Environment Creation**: FlaskStarter automates the creation of a virtual environment, isolating your project dependencies.
