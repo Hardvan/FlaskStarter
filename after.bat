@@ -1,5 +1,5 @@
 @echo off
-call .\.venv\Scripts\activate
+call .\.venv\Scriptsctivate
 pip install Flask
 pip freeze > requirements.txt
 python app.py

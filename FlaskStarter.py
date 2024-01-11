@@ -95,6 +95,17 @@ print("📦 Installing dependencies...")
 venv_thread.join()
 print("✅ Virtual environment created")
 
+# Create the batch file
+batch_content = '''@echo off
+call .\.venv\Scripts\activate
+pip install Flask
+pip freeze > requirements.txt
+python app.py
+'''
+with open("after.bat", "w") as batch_file:
+    batch_file.write(batch_content)
+print("✅ Created batch file")
+
 # Execute the batch file
 subprocess.run(["after.bat"], shell=True, check=True)
 print("✅ Installed dependencies")
