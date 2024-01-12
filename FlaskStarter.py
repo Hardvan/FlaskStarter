@@ -49,7 +49,7 @@ index_html_code = """<!DOCTYPE html>
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="{{ url_for('static', filename='images/favicon.png') }}"
+      href="{{ url_for('static', filename='favicon/favicon.png') }}"
       type="image/x-icon"
     />
 
