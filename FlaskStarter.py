@@ -74,10 +74,24 @@ with open("templates/index.html", "w") as index_html:
 print("✅ Created index.html")
 
 # Inside static folder, create css/index.css and js/index.js (overwrite if exists)
-css_code = """/* Add your CSS styles here */
+css_code = """html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Disable vertical scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
 .title {
-  color: blue;
   font-size: 3rem;
+  text-align: center;
 }
 \n"""
 with open("static/css/index.css", "w") as css_file:
