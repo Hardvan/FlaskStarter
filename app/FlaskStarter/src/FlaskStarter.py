@@ -96,7 +96,7 @@ def get_choice():
             print("Invalid input. Please enter 'y' or 'n'.")
 
 
-def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True, create_html=True, create_css=True, create_js=True, create_gitignore=True):
+def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True, create_html=True, create_css=True, create_js=True, create_gitignore=True, execute_batch=True):
     """Create a Flask project with the given options in the 'root_dir' and display the step-by-step instructions to run the app. The virtual environment is created in a separate thread. 'templates' and 'static' folders are created if they don't exist. 'app.py', 'index.html', 'index.css', 'index.js', and '.gitignore' are created if the user chooses to overwrite them. A batch file 'after.bat' is created to install Flask and other dependencies.
 
     Args:
@@ -107,6 +107,7 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
         create_css (bool, optional): Create index.css. Defaults to True.
         create_js (bool, optional): Create index.js. Defaults to True.
         create_gitignore (bool, optional): Create .gitignore. Defaults to True.
+        execute_batch (bool, optional): Execute the batch file. Defaults to True.
     """
 
     print("🚀 Welcome to Flask Starter! Let's set up your Flask project.")
@@ -121,9 +122,10 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
     print("python app.py")
     print()
     print("=" * 50)
-    print("Let's get started...")
+    print("\nLet's get started...")
 
     # Change directory to the root directory
+    original_dir = os.getcwd()
     if root_dir == os.getcwd():
         print("🌲 Already in the root directory")
     else:
@@ -224,11 +226,18 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
     print("✅ Created batch file")
 
     # Execute the batch file
-    try:
-        subprocess.run(["after.bat"], shell=True, check=True)
-        print("✅ Installed dependencies")
-    except KeyboardInterrupt:
-        print("You have successfully exited the process.")
+    if execute_batch:
+        try:
+            subprocess.run(["after.bat"], shell=True, check=True)
+            print("✅ Installed dependencies")
+        except KeyboardInterrupt:
+            print("You have successfully exited the process.")
+    else:
+        print("Skipping batch file execution...")
+
+    # Change the directory back to the original directory
+    os.chdir(original_dir)
+    print(f"📂 Changing directory back to {original_dir}")
 
     print("\nHappy coding 😊 !")
 

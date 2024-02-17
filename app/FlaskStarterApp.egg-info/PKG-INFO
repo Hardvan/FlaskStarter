@@ -1,14 +1,23 @@
+Metadata-Version: 2.1
+Name: FlaskStarterApp
+Version: 1.0.1
+Summary: FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment creation, a bare-bones app.py file for the backend, templates & static folders along with the index.html, index.css & index.js files for the frontend.
+Home-page: https://github.com/Hardvan/FlaskStarter
+Author: Hardik Pawar
+Author-email: hardikpawarh@gmail.com
+License: UNKNOWN
+Keywords: flask,automation,flask-starter,flask-starter-cli,web-development,web
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
 # FlaskStarter
 
 FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment creation, a bare-bones app.py file for the backend, templates & static folders along with the index.html, index.css & index.js files for the frontend.
-
-## FlaskStarter on PyPI
-
-View the FlaskStarter package on PyPI [here](https://pypi.org/project/FlaskStarterApp/).
-
-## Demonstration Video
-
-[![FlaskStarter Demonstration](./video/thumbnail2.png)](https://youtu.be/5-Lp_lMpJmo)
 
 ## Features
 
@@ -86,15 +95,6 @@ View the FlaskStarter package on PyPI [here](https://pypi.org/project/FlaskStart
 
 - Make sure to customize your Flask app code in app.py and add any additional dependencies to requirements.txt.
 
-- Happy coding! 😊
+- Happy coding! ðŸ˜Š
 
-## Run the following commands to update the package (for maintainers)
 
-1. Change version in `setup.py`
-2. Run the following commands
-
-   ```bash
-   python setup.py bdist_wheel sdist
-   twine check dist/*
-   twine upload dist/*
-   ```

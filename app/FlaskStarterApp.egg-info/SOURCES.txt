@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+setup.py
+app/FlaskStarter/__init__.py
+app/FlaskStarterApp.egg-info/PKG-INFO
+app/FlaskStarterApp.egg-info/SOURCES.txt
+app/FlaskStarterApp.egg-info/dependency_links.txt
+app/FlaskStarterApp.egg-info/top_level.txt
+app/FlaskStarter/src/FlaskStarter.py
+app/FlaskStarter/src/__init__.py
+app/FlaskStarter/test/__init__.py
+app/FlaskStarter/test/deleter.py
+app/FlaskStarter/test/test_FlaskStarter.py

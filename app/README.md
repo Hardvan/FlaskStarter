@@ -2,14 +2,6 @@
 
 FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment creation, a bare-bones app.py file for the backend, templates & static folders along with the index.html, index.css & index.js files for the frontend.
 
-## FlaskStarter on PyPI
-
-View the FlaskStarter package on PyPI [here](https://pypi.org/project/FlaskStarterApp/).
-
-## Demonstration Video
-
-[![FlaskStarter Demonstration](./video/thumbnail2.png)](https://youtu.be/5-Lp_lMpJmo)
-
 ## Features
 
 - **Virtual Environment Creation**: FlaskStarter automates the creation of a virtual environment, isolating your project dependencies.
@@ -87,14 +79,3 @@ View the FlaskStarter package on PyPI [here](https://pypi.org/project/FlaskStart
 - Make sure to customize your Flask app code in app.py and add any additional dependencies to requirements.txt.
 
 - Happy coding! 😊
-
-## Run the following commands to update the package (for maintainers)
-
-1. Change version in `setup.py`
-2. Run the following commands
-
-   ```bash
-   python setup.py bdist_wheel sdist
-   twine check dist/*
-   twine upload dist/*
-   ```
