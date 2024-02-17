@@ -97,6 +97,16 @@ def get_choice():
 
 
 def create_flask_project(create_venv=True, create_app=True, create_html=True, create_css=True, create_js=True, create_gitignore=True):
+    """Create a Flask project with the given options and display the step-by-step instructions to run the app. The virtual environment is created in a separate thread. 'templates' and 'static' folders are created if they don't exist. 'app.py', 'index.html', 'index.css', 'index.js', and '.gitignore' are created if the user chooses to overwrite them. A batch file 'after.bat' is created to install Flask and other dependencies.
+
+    Args:
+        create_venv (bool, optional): Create virtual environment. Defaults to True.
+        create_app (bool, optional): Create app.py. Defaults to True.
+        create_html (bool, optional): Create index.html. Defaults to True.
+        create_css (bool, optional): Create index.css. Defaults to True.
+        create_js (bool, optional): Create index.js. Defaults to True.
+        create_gitignore (bool, optional): Create .gitignore. Defaults to True.
+    """
 
     print("🚀 Welcome to Flask Starter! Let's set up your Flask project.")
     print("Note: Use this script only once at the start of your project.")
