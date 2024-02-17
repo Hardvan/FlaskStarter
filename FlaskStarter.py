@@ -96,10 +96,11 @@ def get_choice():
             print("Invalid input. Please enter 'y' or 'n'.")
 
 
-def create_flask_project(create_venv=True, create_app=True, create_html=True, create_css=True, create_js=True, create_gitignore=True):
-    """Create a Flask project with the given options and display the step-by-step instructions to run the app. The virtual environment is created in a separate thread. 'templates' and 'static' folders are created if they don't exist. 'app.py', 'index.html', 'index.css', 'index.js', and '.gitignore' are created if the user chooses to overwrite them. A batch file 'after.bat' is created to install Flask and other dependencies.
+def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True, create_html=True, create_css=True, create_js=True, create_gitignore=True):
+    """Create a Flask project with the given options in the 'root_dir' and display the step-by-step instructions to run the app. The virtual environment is created in a separate thread. 'templates' and 'static' folders are created if they don't exist. 'app.py', 'index.html', 'index.css', 'index.js', and '.gitignore' are created if the user chooses to overwrite them. A batch file 'after.bat' is created to install Flask and other dependencies.
 
     Args:
+        root_dir (str, optional): Root directory for the project. Defaults to os.getcwd().
         create_venv (bool, optional): Create virtual environment. Defaults to True.
         create_app (bool, optional): Create app.py. Defaults to True.
         create_html (bool, optional): Create index.html. Defaults to True.
@@ -121,6 +122,16 @@ def create_flask_project(create_venv=True, create_app=True, create_html=True, cr
     print()
     print("=" * 50)
     print("Let's get started...")
+
+    # Change directory to the root directory
+    if root_dir == os.getcwd():
+        print("🌲 Already in the root directory")
+    else:
+        print(f"📂 Changing directory to {root_dir}")
+        if not os.path.exists(root_dir):
+            os.makedirs(root_dir, exist_ok=True)
+        os.chdir(root_dir)
+        print(f"Current working directory: \033[94m{os.getcwd()}\033[0m\n")
 
     # Create virtual environment (skip if .venv exists)
     def create_venv():  # Function to create virtual environment
