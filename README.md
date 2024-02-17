@@ -1,6 +1,6 @@
 # FlaskStarter
 
-FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment, basic Flask app, templates, and static files.
+FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment creation, a bare-bones app.py file for the backend, templates & static folders along with the index.html, index.css & index.js files for the frontend.
 
 ## Demonstration Video
 
@@ -27,33 +27,49 @@ FlaskStarter is a project automation script designed to kickstart your Flask web
 
 ## Getting Started
 
-1. Clone this repository
+1. Install the FlaskStarter package using the following command:
 
    ```bash
-    git clone https://github.com/Hardvan/FlaskStarter.git
+   pip install FlaskStarter
    ```
 
-2. Navigate to the project folder:
+   OR
+
+   Clone this repository using the following command:
 
    ```bash
-    cd FlaskStarter
+   git clone https://github.com/Hardvan/FlaskStarter
+   cd FlaskStarter
+   pip install .
    ```
 
-3. Run FlaskStarter:
+2. Call the `create_flask_project` function from the FlaskStarter package to create a new Flask project:
 
-   ```bash
-    python FlaskStarter.py
+   ```python
+   from FlaskStarter import create_flask_project
+
+   create_flask_project()
    ```
 
-4. Follow the setup instructions provided by FlaskStarter.
+   After clicking on the link `http://127.0.0.1:5000`, you should see a Hello, World message h1 title on the webpage.
 
-5. After clicking on the `http://127.0.0.1:5000`, you should see a Hello, World message in blue color.
+   The function accepts the following parameters:
+
+   - **root_dir (str, optional):** Root directory for the project. Defaults to os.getcwd().
+   - **create_venv (bool, optional):** Create virtual environment. Defaults to True.
+   - **create_app (bool, optional):** Create app.py. Defaults to True.
+   - **create_html (bool, optional):** Create index.html. Defaults to True.
+   - **create_css (bool, optional):** Create index.css. Defaults to True.
+   - **create_js (bool, optional):** Create index.js. Defaults to True.
+   - **create_gitignore (bool, optional):** Create .gitignore. Defaults to True.
+
+3. View the [`run.py`](./run.py) file for a complete example.
 
 ## Project Files
 
 - **FlaskStarter.py**: The main automation script that sets up your Flask project.
 
-- **deleter.py**: A script for deleting project files and directories, leaving only FlaskStarter.py intact. Useful for cleaning up after your project is complete.
+- **deleter.py**: A script for deleting project files and directories, leaving only FlaskStarter.py intact. Useful for cleaning up after your project is complete. Mainly for testing purposes, not recommended for production use.
 
 - **after.bat**: A batch script for activating the virtual environment, installing Flask and other dependencies, and running your Flask app.
 
