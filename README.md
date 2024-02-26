@@ -80,7 +80,7 @@ View the FlaskStarter package on PyPI [here](https://pypi.org/project/FlaskStart
 
 ## Note
 
-- FlaskStartApp is the name of the package on PyPI, while FlaskStarter is the name of the package in the repository.
+- FlaskStarterApp is the name of the package on PyPI, while FlaskStarter is the name of the package in the repository.
 
 - FlaskStarter.py is the primary automation script, while deleter.py is intended for cleaning up the project files after use.
 
