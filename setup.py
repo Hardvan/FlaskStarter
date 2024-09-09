@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name="FlaskStarterApp",
-    version="1.0.2",
+    version="1.0.3",
     author="Hardik Pawar",
     author_email="hardikpawarh@gmail.com",
     description="FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment creation, a bare-bones app.py file for the backend, templates & static folders along with the index.html, index.css & index.js files for the frontend.",

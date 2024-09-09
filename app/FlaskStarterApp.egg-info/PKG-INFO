@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: FlaskStarterApp
-Version: 1.0.2
+Version: 1.0.3
 Summary: FlaskStarter is a project automation script designed to kickstart your Flask web application development. It helps you set up a Flask project structure, including a virtual environment creation, a bare-bones app.py file for the backend, templates & static folders along with the index.html, index.css & index.js files for the frontend.
 Home-page: https://github.com/Hardvan/FlaskStarter
 Author: Hardik Pawar

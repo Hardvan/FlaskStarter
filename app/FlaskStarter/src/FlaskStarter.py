@@ -78,7 +78,7 @@ python app.py
 '''
 
 
-def get_choice(prompt):
+def _get_choice(prompt):
     """Get user choice (y/n) and return True if 'y' and False if 'n'
 
     Args
@@ -155,7 +155,7 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
 
     # Create app.py (ask to overwrite if exists)
     if os.path.exists("app.py"):
-        create_app = get_choice(
+        create_app = _get_choice(
             "🔍 Found an existing app.py. Overwrite (y/n)?: ")
     if create_app:
         print("Overwriting app.py...")
@@ -171,7 +171,7 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
 
     # Inside templates folder, create index.html (ask to overwrite if exists)
     if os.path.exists("templates/index.html"):
-        create_html = get_choice(
+        create_html = _get_choice(
             "🔍 Found an existing index.html. Overwrite (y/n)?: ")
     if create_html:
         with open("templates/index.html", "w") as index_html:
@@ -189,7 +189,7 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
 
     # Inside static folder, create css/index.css and js/index.js (ask to overwrite if exists)
     if os.path.exists("static/css/index.css"):
-        create_css = get_choice(
+        create_css = _get_choice(
             "🔍 Found an existing index.css. Overwrite (y/n)?: ")
     if create_css:
         with open("static/css/index.css", "w") as css_file:
@@ -198,7 +198,7 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
     else:
         print("Skipping index.css creation...")
     if os.path.exists("static/js/index.js"):
-        create_js = get_choice(
+        create_js = _get_choice(
             "🔍 Found an existing index.js. Overwrite (y/n)?: ")
     if create_js:
         with open("static/js/index.js", "w") as js_file:
@@ -209,7 +209,7 @@ def create_flask_project(root_dir=os.getcwd(), create_venv=True, create_app=True
 
     # Create .gitignore (overwrite if exists)
     if os.path.exists(".gitignore"):
-        create_gitignore = get_choice(
+        create_gitignore = _get_choice(
             "🔍 Found an existing .gitignore. Overwrite (y/n)?: ")
     if create_gitignore:
         gitignore_content = '.venv/\n__pycache__/\n.vscode/\n.env\n'
